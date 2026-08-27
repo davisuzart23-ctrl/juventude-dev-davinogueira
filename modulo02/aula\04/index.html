@@ -1,0 +1,130 @@
+<h1>Parte 1</h1>
+<form>
+<center>
+<h1>Titulo</h1>
+
+<input type="text" name="nome" placeholder="Seu nome">
+<br><br>
+
+<input type="email" name="email" placeholder="Seu@email,com">
+<br><br>
+
+<input type="password" name="senha" placeholder="Sua senha">
+<br><br>
+
+<input type="date" name="idade" placeholder="Sua idade">
+<br><br>
+
+<p>Termos de confidalidade</p>
+
+
+
+<br>
+
+<textarea name="mensagem" rows="5"
+placeholder="Ola aqui esta os termos de acordo de usarmos sua imagem com sua permisao"></textarea>
+
+<br><br>
+
+
+
+<input type="radio" name="genero"
+value="f"> Sim
+
+<input type="radio" name="genero"
+value="m"> Nao
+<br><br><br>
+
+
+<input type="file"
+name="foto_perfil">
+<br>
+
+<button>Enviar</button> 
+
+</center>
+</form>
+
+<h1>Parte 2</h1>
+<lasbel for="nome">Nome completo</lasbel>
+<input type="text"
+id="nome"
+name="nome" required
+minlength="3">
+
+
+<label for="email">E-mail</label>
+<input type="email" id="email"
+name="email" required>
+
+<br><br>
+<h1>Parte 3</h1>
+
+
+
+
+<label for="cep">CEP</label>
+<input type="text"
+id="cep"
+name="cep"
+pattern="{0-9}{5}-{0-9}{3}"
+title="Formato esperado:
+00000-000">
+
+
+<h1>Parte 4</h1>
+<form id="form contato" action="/enviar" method="post">
+
+
+<center>
+<h1>Titulo</h1>
+
+<input type="text" name="nome" placeholder="Seu nome" required>
+<br><br>
+
+<input type="email" name="email" placeholder="Seu@email,com" required>
+<br><br>
+
+<input type="password" name="senha" placeholder="Sua senha" required>
+<br><br>
+
+<input type="date" name="idade" placeholder="Sua idade" required>
+<br><br>
+
+<p>Termos de confidalidade</p>
+
+
+
+<br>
+
+<textarea name="mensagem" rows="5"
+placeholder="Ola aqui esta os termos de acordo de usarmos sua imagem com sua permisao"></textarea required>
+
+<br><br>
+
+
+
+<input type="radio" name="genero"
+value="f"> Sim
+
+<input type="radio" name="genero"
+value="m"> Nao
+<br><br><br>
+
+
+<input type="file"
+name="foto_perfil" required>
+<br>
+
+<button type="submit">Enviar mensagem</button>
+
+
+
+
+
+
+
+
+
+</center>
+</form>
