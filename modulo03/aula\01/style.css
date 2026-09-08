@@ -7,4 +7,15 @@ body {
 .cartao { background: rgb(240, 13, 13); }
 #titulo { color: #110344; }
 
+.interesses {
+  color: #1e293b;
+background: #dbeafe;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 18px;
+text-align:center;
+
+
+
+
+}
 
