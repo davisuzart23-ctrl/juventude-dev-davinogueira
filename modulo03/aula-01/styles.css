@@ -1,0 +1,53 @@
+/* --- ESTILOS GERAIS DA PÁGINA --- */
+body {
+    background: #720e0e;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* --- SEU DESAFIO COMEÇA AQUI --- */
+/* Preencha os valores de acordo com o briefing de cada cartão */
+
+.cartao1 { 
+    /* BRIEFING MÚSICA: #ffffff sobre #7c3aed, Georgia, 22px, centralizado */
+    background:#7c3eed ; 
+    color:#ffffff;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-size:22xp ; 
+    text-align:center ;
+box-shadow: 0 0 20xp rgba(93,93,93 0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.cartao2 { 
+    /* BRIEFING GAMES: #22d3ee sobre #0f172a, Courier New, 20px, centralizado */
+    background:#0f172a; 
+    color:#22d3ee ;
+    font-family:'Courier New', Courier, monospace ;
+    font-size;20xp;
+    text-align:center ;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.cartao3 { 
+    /* BRIEFING NATUREZA: #166534 sobre #dcfce7, Arial, 18px, alinhado à esquerda */
+    background:#dcfce7 ;
+    color: #166534; ;
+    font-family:Arial, Helvetica, sans-serif ;
+    font: size 18px; ;
+    text-align:left ;
+    box-shadow: 0 0 20xp rgba(59, 6, 158, 0.856);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Garante que os links fiquem com a mesma cor do texto do cartão */
+a { color: inherit; }
+
+box-shadow: 0 0 20xp rgba(93,93,93 0.2);
+
