@@ -1,12 +1,16 @@
 /* --- ESTILOS GERAIS DA PÁGINA --- */
 body {
-    background: #720e0e;
+    background: #cfcbcb;
     font-family: Arial, sans-serif;
     padding: 20px;
 }
 
 /* --- SEU DESAFIO COMEÇA AQUI --- */
 /* Preencha os valores de acordo com o briefing de cada cartão */
+
+.cartao67 li{
+.card p {color:#e64fac} 
+}
 
 .cartao1 { 
     /* BRIEFING MÚSICA: #ffffff sobre #7c3aed, Georgia, 22px, centralizado */
@@ -15,10 +19,11 @@ body {
     font-family:Georgia, 'Times New Roman', Times, serif ;
     font-size:22xp ; 
     text-align:center ;
-box-shadow: 0 0 20xp rgba(93,93,93 0.2);
+    box-shadow: 0 0 20xp rgba(0, 0, 0, 0.856);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
+    
 }
 
 .cartao2 { 
@@ -39,8 +44,8 @@ box-shadow: 0 0 20xp rgba(93,93,93 0.2);
     color: #166534; ;
     font-family:Arial, Helvetica, sans-serif ;
     font: size 18px; ;
-    text-align:left ;
-    box-shadow: 0 0 20xp rgba(59, 6, 158, 0.856);
+    text-align:center ;
+    box-shadow: 0 0 20xp rgb(81, 5, 221);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -49,5 +54,9 @@ box-shadow: 0 0 20xp rgba(93,93,93 0.2);
 /* Garante que os links fiquem com a mesma cor do texto do cartão */
 a { color: inherit; }
 
-box-shadow: 0 0 20xp rgba(93,93,93 0.2);
-
+p {color: #334155;}
+.destaque {background: yellow;}
+#titulo-principal {font-size: 32px;}
+.card p{color: #475569;}
+.menu> a {color: white;}
+input[type="email"] {border-color: blue;}
