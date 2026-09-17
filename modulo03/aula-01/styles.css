@@ -58,5 +58,5 @@ p {color: #334155;}
 .destaque {background: yellow;}
 #titulo-principal {font-size: 32px;}
 .card p{color: #475569;}
-.menu> a {color: white;}
+.menu> a {color: rgba(134, 7, 7, 0);}
 input[type="email"] {border-color: blue;}

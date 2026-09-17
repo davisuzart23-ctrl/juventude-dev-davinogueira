@@ -1,0 +1,24 @@
+{
+    margin: 0;
+    pedding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0FGA2E
+    padding: 1.5rem;
+
+}
+
+.todo {
+    max-width: 960px;
+margin: 0 auto;
+}
+
+.topo {
+    min-height: 20vh;
+margin-bottom: 1rem;
+border-radius: 18px;
+background: linear-gradient(135deg, #2d1b69, #7c3aed)
+box-shadow: 0 10px 24px rgba(0, 0, 0, 35);
+}
