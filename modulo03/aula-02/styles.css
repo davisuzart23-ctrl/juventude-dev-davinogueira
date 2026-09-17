@@ -1,24 +1,68 @@
-{
+* {
     margin: 0;
     pedding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background: #0FGA2E
+    background: #0F0A2E;
     padding: 1.5rem;
 
 }
 
 .todo {
     max-width: 960px;
-margin: 0 auto;
+    margin: 0 auto;
 }
 
 .topo {
     min-height: 20vh;
-margin-bottom: 1rem;
-border-radius: 18px;
-background: linear-gradient(135deg, #2d1b69, #7c3aed)
-box-shadow: 0 10px 24px rgba(0, 0, 0, 35);
+    margin-bottom: 1rem;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #01390a, #7c3aed);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 35);
+}
+
+.meio {
+    min-height: 20vh;
+    margin-bottom: 1rem;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #2478ff, #741414);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 35);
+    text-align: center;
+}
+
+.baixo {
+    min-height: 20vh;
+    margin-bottom: 1rem;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #2e00c7, #fe0059);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 35);
+}
+
+
+.meio{
+    text-align: center;
+}
+
+.card-meio{
+    display: inline-block;
+    vertical-align: top;
+    width: 22%;
+    min-height: 14vh;
+    background: #1b1538;
+    border-radius: 14px;
+    margin: .5% 1%;
+    border: 2px solid rgba(255, 255, 255, 12);
+}
+
+.baixo{
+    display: inline-block;
+    vertical-align: top;
+    width: 22%;
+    min-height: 14vh;
+    background: #1b1538;
+    border-radius: 14px;
+    margin: .5% 1%;
+    border: 2px solid rgba(255, 255, 255, 12);
 }
