@@ -66,3 +66,13 @@ body {
     margin: .5% 1%;
     border: 2px solid rgba(255, 255, 255, 12);
 }
+.baixo2{
+    display:inline-block ;
+    vertical-align: top;
+    width: 50%;
+    min-height: 23vh;
+    background: #1b1538;
+    border-radius: 14px;
+    margin: .5% 1%;
+    border: 2px solid rgba(255, 255, 255, 12);
+}
