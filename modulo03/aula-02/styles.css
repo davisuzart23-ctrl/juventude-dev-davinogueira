@@ -41,11 +41,11 @@ body {
 }
 
 
-.meio{
+.meio {
     text-align: center;
 }
 
-.card-meio{
+.card-meio {
     display: inline-block;
     vertical-align: top;
     width: 22%;
@@ -56,23 +56,63 @@ body {
     border: 2px solid rgba(255, 255, 255, 12);
 }
 
-.baixo{
+.baixo {
     display: inline-block;
     vertical-align: top;
-    width: 22%;
-    min-height: 14vh;
+    width: 80%;
+    min-height: 80px;
     background: #1b1538;
     border-radius: 14px;
     margin: .5% 1%;
+    margin-left: 10%;
     border: 2px solid rgba(255, 255, 255, 12);
 }
-.baixo2{
-    display:inline-block ;
+
+.baixo2 {
+    display: inline-block;
     vertical-align: top;
-    width: 50%;
+    width: 45%;
     min-height: 23vh;
     background: #1b1538;
     border-radius: 14px;
     margin: .5% 1%;
     border: 2px solid rgba(255, 255, 255, 12);
+}
+
+nav {
+    margin-bottom: 1rem;
+    padding: 1rem border-radius: 14px;
+    background: #1b1538;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #fe0059;
+}
+
+nav a:hover {
+    color: #ffc857;
+    background: rgba(255, 200, 87, .12);
+}
+
+nav a:active {
+    trasform: translateY(1px);
+}
+
+nav a:focus-visible {
+outline: 3px solid #ffc857;
+outline-offset: 3px;
+border-radius: 4px;
 }
