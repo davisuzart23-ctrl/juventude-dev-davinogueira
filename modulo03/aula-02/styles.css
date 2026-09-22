@@ -79,39 +79,39 @@ body {
     border: 2px solid rgba(255, 255, 255, 12);
 }
 
-nav {
+.menu {
     margin-bottom: 1rem;
     padding: 1rem border-radius: 14px;
     background: #1b1538;
 }
 
-nav ul {
+.menu ul {
     display: flex;
     justify-content: center;
     gap: 2rem;
     list-style: none;
 }
 
-nav a {
+.menu a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
 }
 
-nav a:hover {
+.menu a:hover {
     color: #fe0059;
 }
 
-nav a:hover {
+.menu a:hover {
     color: #ffc857;
     background: rgba(255, 200, 87, .12);
 }
 
-nav a:active {
+.menu a:active {
     trasform: translateY(1px);
 }
 
-nav a:focus-visible {
+.menu a:focus-visible {
 outline: 3px solid #ffc857;
 outline-offset: 3px;
 border-radius: 4px;
