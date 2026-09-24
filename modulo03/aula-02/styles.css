@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    pedding: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -81,7 +81,8 @@ body {
 
 .menu {
     margin-bottom: 1rem;
-    padding: 1rem border-radius: 14px;
+    padding: 1rem;
+    border-radius: 14px;
     background: #1b1538;
 }
 
@@ -108,11 +109,38 @@ body {
 }
 
 .menu a:active {
-    trasform: translateY(1px);
+    transform: translateY(1px);
 }
 
 .menu a:focus-visible {
-outline: 3px solid #ffc857;
-outline-offset: 3px;
-border-radius: 4px;
+    outline: 3px solid #ffc857;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.menu-toggle {
+    position: absolute;
+    opacity: 0;
+}
+
+.menu-botao {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: .5rem .75rem;
+    color: #ffffff;
+    background: #1b1538;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.menu-toggle:checked ~ .menu {
+    display: inline-block;
+}
+
+.menu-toggle {position:absolute;opacity:}
+
+@media (max-width: 768px){
+.menu {display:none;
+}
 }

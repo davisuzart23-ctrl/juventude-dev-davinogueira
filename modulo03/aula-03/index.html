@@ -1,0 +1,102 @@
+
+<form id="form contato" action="/enviar" method="post">
+<input type="text" class="form-control">
+<textarea class="form-control" rows="4"></textarea>
+
+<html lang="pt.BR">
+<head>
+
+</head>    
+
+<body>
+<div class="mb-3">
+<label for="nome" class="form-label">Nome</label>
+<input type="text" class="form-control" id="nome" name="nome" required>
+</div>
+
+
+
+
+<h1>Formulario</h1>
+
+<input type="text" name="nome" placeholder="Seu nome" required>
+<br><br>
+
+<input type="tel" name="telefone" placeholder="Seu telefone" required>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<input type="email" name="email" placeholder="Seu@email,com" required>
+<br><br>
+
+<input type="password" name="senha" placeholder="Sua senha" required>
+<br><br>
+
+<input type="date" name="idade" placeholder="Sua idade" required>
+<br><br>
+
+
+<select name="genero">
+  <option value="feminino">feminino</option>
+  <option value="masculino">masculino</option>
+  <option value="outro">outro</option>
+</select>
+
+
+<p>Termos de confidalidade</p>
+
+
+
+<br>
+
+<textarea name="mensagem" rows="5"
+placeholder="Ola aqui esta os termos de acordo de usarmos sua imagem com sua permisao"></textarea required>
+
+<br><br>
+
+
+
+<input type="radio" name="genero"
+value="f"> Sim
+
+<input type="radio" name="genero"
+value="m"> Nao
+<br><br><br>
+
+
+<input type="file"
+name="foto_perfil" required>
+<br><br><br><br>
+
+<button type="submit">Enviar mensagem</button>
+
+
+
+
+
+
+
+
+
+</form>
+
+<script>
+const formulario = document.querySelector("#form-contato"):
+
+formulario.addEventListener("submit",
+function (event) {
+alert("mensagem enviada com sucesso!);
+});
+
+</script>
+
+
+
+
+
+<button type="submit" class=btn btn-primary>Enviar
+    
+</button>
+
+
+</body>
+</html>
