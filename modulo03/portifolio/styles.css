@@ -1,0 +1,535 @@
+/* ===================================================================
+   PORTFÓLIO — ADA RIBEIRO
+   Acabamento próprio por cima do Bootstrap 5.3.8
+   -------------------------------------------------------------------
+   ORDEM DAS REGRAS (importa!):
+     1. @import das fontes          -> precisa ser a 1ª regra do arquivo
+     2. variáveis (:root)           -> 1 lugar para trocar as cores
+     3. base (html, body)           -> rolagem suave e fundo
+     4. componentes (.topo, .hero…) -> cada bloco em sua seção
+     5. ajustes no Bootstrap        -> .btn-primary, .card, .alert
+     6. responsividade              -> @media no fim
+   Dica: carregue este arquivo DEPOIS do bootstrap.min.css, senão as
+   regras do Bootstrap ganham na disputa de especificidade.
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ===================================================================
+   2. VARIÁVEIS — paleta "Recôncavo Code" do programa
+   Troque só aqui e a página inteira acompanha.
+   =================================================================== */
+:root {
+  --cor-roxo:     #2D1B69;
+  --cor-magenta:  #FF3D7F;
+  --cor-amarelo:  #FFC857;
+  --cor-verde:    #06D6A0;
+  --cor-tinta:    #0F0A2E;
+
+  --papel:        #F7F7FB;   /* fundo da página          */
+  --papel-2:      #F1F0FA;   /* fundo de blocos          */
+  --branco:       #FFFFFF;   /* cards                    */
+  --linha:        #E5E5EE;   /* divisórias               */
+  --texto:        #1A1A2E;   /* título                   */
+  --texto-suave:  #5B5B72;   /* corpo                    */
+
+  --raio-md: 14px;
+  --raio-lg: 22px;
+  --sombra: 0 18px 40px -24px rgba(15, 10, 46, .35);
+
+  --fonte: 'Space Grotesk', system-ui, sans-serif;
+  --fonte-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ===================================================================
+   3. BASE
+   =================================================================== */
+html {
+  /* sem isso os links #ancora param embaixo do cabeçalho fixo */
+  scroll-padding-top: 96px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--papel);
+  color: var(--texto);
+  font-family: var(--fonte);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* margem extra também nas seções (celular costuma ignorar scroll-padding) */
+section[id] { scroll-margin-top: 96px; }
+
+/* ===================================================================
+   4. CABEÇALHO FIXO
+   position: sticky -> "gruda" no topo ao rolar, sem sair do fluxo.
+   z-index alto       -> fica acima dos cards.
+   backdrop-filter    -> leve desfoque no que passa por baixo.
+   =================================================================== */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 1030;             /* a navbar do Bootstrap usa 1030 */
+  background-color: rgba(247, 247, 251, .88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--linha);
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  text-decoration: none;
+  color: var(--texto);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.marca__icone {
+  display: grid;
+  place-items: center;       /* centraliza o ícone na caixinha */
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--cor-roxo);
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.marca__nome small {
+  display: block;            /* joga o subtítulo para a linha de baixo */
+  font-family: var(--fonte-mono);
+  font-size: .68rem;
+  font-weight: 400;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+/* ===================================================================
+   SEÇÕES — ritmo vertical
+   padding-block cria o respiro entre uma seção e outra; assim eu não
+   preciso encher o HTML de classes mt-5/mb-5.
+   =================================================================== */
+.secao { padding-block: 64px; }
+
+.secao__cabeca {
+  display: flex;
+  flex-wrap: wrap;           /* no celular quebra linha em vez de estourar */
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.secao__titulo {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  margin: 0;
+}
+
+.eyebrow {
+  font-family: var(--fonte-mono);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--cor-magenta);
+  margin-bottom: .5rem;
+}
+
+/* ===================================================================
+   APRESENTAÇÃO
+   =================================================================== */
+.hero {
+  margin-top: 32px;
+  padding: clamp(24px, 4vw, 56px);   /* cresce conforme a largura da tela */
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-lg);
+  background:
+    radial-gradient(900px 380px at 8% -20%, rgba(255, 61, 127, .16), transparent 62%),
+    radial-gradient(760px 360px at 95% 0%, rgba(6, 214, 160, .16), transparent 58%),
+    var(--papel-2);
+}
+
+.hero__titulo {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.03em;
+}
+
+/* marca-texto do título: cor de fundo + padding desenha o grifo */
+.destaque {
+  background: linear-gradient(transparent 62%, rgba(255, 200, 87, .75) 62%);
+  padding-inline: .1em;
+}
+
+.hero__lead {
+  max-width: 56ch;           /* largura de leitura confortável */
+  margin-top: 1rem;
+  font-size: 1.075rem;
+  color: var(--texto-suave);
+}
+
+/* etiquetas de tecnologia */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .35rem .75rem;
+  border: 1px solid var(--linha);
+  border-radius: 999px;
+  background: var(--branco);
+  font-family: var(--fonte-mono);
+  font-size: .74rem;
+  color: var(--texto-suave);
+}
+
+.chip--magenta { color: #C81E53; border-color: rgba(255, 61, 127, .45); background: rgba(255, 61, 127, .10); }
+.chip--verde   { color: #04785A; border-color: rgba(6, 214, 160, .45);  background: rgba(6, 214, 160, .12); }
+.chip--roxo    { color: var(--cor-roxo); border-color: rgba(45, 27, 105, .30); background: rgba(45, 27, 105, .08); }
+.chip--amarelo { color: #8A6100; border-color: rgba(255, 200, 87, .60); background: rgba(255, 200, 87, .18); }
+
+/* link com setinha que desliza no hover */
+.link-seta {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-weight: 600;
+  color: var(--cor-magenta);
+  text-decoration: none;
+}
+.link-seta i { transition: transform .18s ease; }
+.link-seta:hover i { transform: translateX(4px); }
+
+/* ===================================================================
+   5. AJUSTES NO BOOTSTRAP
+   Os botões do Bootstrap leem CSS variables próprias. Redefinindo
+   --bs-btn-bg / --bs-btn-hover-bg eu troco a cor sem !important.
+   =================================================================== */
+.btn { --bs-btn-font-weight: 600; }
+
+.btn-primary {
+  --bs-btn-bg: var(--cor-magenta);
+  --bs-btn-border-color: var(--cor-magenta);
+  --bs-btn-hover-bg: #E0265F;
+  --bs-btn-hover-border-color: #E0265F;
+  --bs-btn-active-bg: #C81E53;
+  --bs-btn-active-border-color: #C81E53;
+  --bs-btn-disabled-bg: var(--cor-magenta);
+  --bs-btn-disabled-border-color: var(--cor-magenta);
+  --bs-btn-focus-shadow-rgb: 255, 61, 127;
+}
+
+.btn-success {
+  --bs-btn-color: #04241B;
+  --bs-btn-bg: var(--cor-verde);
+  --bs-btn-border-color: var(--cor-verde);
+  --bs-btn-hover-color: #04241B;
+  --bs-btn-hover-bg: #05BD8D;
+  --bs-btn-hover-border-color: #05BD8D;
+  --bs-btn-active-color: #04241B;
+  --bs-btn-active-bg: #04A67C;
+  --bs-btn-active-border-color: #04A67C;
+  --bs-btn-focus-shadow-rgb: 6, 214, 160;
+}
+
+.alert { border-radius: var(--raio-md); }
+.alerta-aviso { max-width: 900px; margin-inline: auto; }
+
+
+/* ===================================================================
+   CARDS DE PROJETO
+   .h-100 no HTML + overflow hidden + altura fixa da imagem garantem
+   que todos os cards tenham a mesma altura dentro da linha.
+   =================================================================== */
+.card {
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-md);
+  background: var(--branco);
+}
+
+/* card do "quem sou eu", na apresentação */
+.cartao-perfil {
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.cartao-perfil .card-img-top {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.card-projeto {
+  overflow: hidden;          /* corta a imagem nos cantos arredondados */
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.card-projeto:hover {
+  transform: translateY(-6px);   /* "levanta" o card */
+  box-shadow: var(--sombra);
+  border-color: rgba(45, 27, 105, .28);
+}
+
+/* mesma proporção de imagem em todos os cards */
+.card-projeto .card-img-top {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;         /* preenche a área sem distorcer */
+}
+
+.card-projeto .card-header {
+  background: transparent;
+  border-bottom: 1px solid var(--linha);
+  padding: .65rem .9rem;
+}
+
+.card-projeto .card-footer {
+  background: transparent;
+  border-top: 1px solid var(--linha);
+  font-size: .82rem;
+  color: var(--texto-suave);
+}
+
+/* o card em destaque ganha uma borda colorida */
+.card-projeto.destaque {
+  border: 2px solid var(--cor-magenta);
+  box-shadow: 0 0 0 4px rgba(255, 61, 127, .10);
+}
+
+/* selos do cabeçalho do card */
+.badge-selo {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .25rem .6rem;
+  border: 1px solid rgba(255, 61, 127, .45);
+  border-radius: 999px;
+  background: rgba(255, 61, 127, .10);
+  color: #C81E53;
+  font-family: var(--fonte-mono);
+  font-size: .7rem;
+  font-weight: 600;
+}
+.badge-selo--verde   { color: #04785A; border-color: rgba(6, 214, 160, .45); background: rgba(6, 214, 160, .12); }
+.badge-selo--roxo    { color: var(--cor-roxo); border-color: rgba(45, 27, 105, .30); background: rgba(45, 27, 105, .08); }
+.badge-selo--amarelo { color: #8A6100; border-color: rgba(255, 200, 87, .60); background: rgba(255, 200, 87, .18); }
+.badge-selo--claro   { color: #fff; border-color: rgba(255, 255, 255, .35); background: rgba(255, 255, 255, .16); }
+
+/* botão só de ícone dentro do card */
+.icone-acao {
+  --bs-btn-color: var(--texto-suave);
+  --bs-btn-hover-color: var(--cor-magenta);
+  padding: .15rem .35rem;
+  line-height: 1;
+  text-decoration: none;     /* tira o sublinhado do .btn-link */
+}
+.icone-acao--claro { --bs-btn-color: #fff; --bs-btn-hover-color: var(--cor-amarelo); }
+
+/* card escuro (Meu Bairro) */
+.card-projeto.text-bg-dark .card-header { border-bottom-color: rgba(255, 255, 255, .14); }
+.card-projeto.text-bg-dark .card-title { color: #fff; }
+
+/* ===================================================================
+   LISTAS COM ÍCONES
+   list-style: none tira as bolinhas; o ícone entra pelo <i> no HTML.
+   =================================================================== */
+.lista-icones {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: .75rem;
+}
+
+.lista-icones li {
+  display: flex;
+  align-items: flex-start;   /* ícone não desce quando o texto tem 2 linhas */
+  gap: .6rem;
+  color: var(--texto-suave);
+}
+
+.lista-icones i { color: var(--cor-magenta); line-height: 1.5; }
+
+/* duas colunas a partir de 576px (celular grande) */
+@media (min-width: 576px) {
+  .lista-icones--2col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ===================================================================
+   DETALHE DO PROJETO (card horizontal)
+   =================================================================== */
+.card-detalhe {
+  overflow: hidden;
+  border-radius: var(--raio-lg);
+}
+
+.detalhe__img {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===================================================================
+   SOBRE / HABILIDADES
+   =================================================================== */
+.texto-grande {
+  font-size: 1.075rem;
+  color: var(--texto-suave);
+}
+
+.card-habilidades .card-header {
+  background: var(--cor-roxo);
+  color: #fff;
+  border-bottom: 0;
+  font-weight: 600;
+}
+
+.card-habilidades .list-group-item {
+  border-color: var(--linha);
+  padding-block: .85rem;
+}
+
+
+/* ===================================================================
+   ACCORDION
+   O componente já vem pronto; aqui eu só troco as cores para combinar
+   com o resto da página.
+   =================================================================== */
+.accordion { --bs-accordion-border-color: var(--linha); }
+
+.accordion-button {
+  font-weight: 600;
+  color: var(--texto);
+  background: var(--branco);
+}
+
+.accordion-button:not(.collapsed) {
+  background: rgba(45, 27, 105, .06);
+  color: var(--cor-roxo);
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 3px rgba(255, 61, 127, .28);
+}
+
+.accordion-body { color: var(--texto-suave); }
+
+.accordion-body code {
+  font-family: var(--fonte-mono);
+  color: var(--cor-magenta);
+  background: rgba(255, 61, 127, .08);
+  padding: .05rem .3rem;
+  border-radius: 6px;
+}
+
+/* ===================================================================
+   CHAMADA FINAL (contato)
+   background aqui sobrescreve o branco definido em .card, porque
+   aparece depois no arquivo.
+   =================================================================== */
+.card-contato {
+  border: 0;
+  border-radius: var(--raio-lg);
+  overflow: hidden;
+  color: #E8E6F5;
+  background:
+    radial-gradient(600px 300px at 85% 10%, rgba(255, 61, 127, .45), transparent 60%),
+    linear-gradient(135deg, var(--cor-roxo), var(--cor-tinta));
+}
+
+.card-contato h2 { color: #fff; }
+
+.card-contato__icone {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-inline: auto;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .14);
+  color: var(--cor-amarelo);
+  font-size: 1.6rem;
+}
+
+/* ===================================================================
+   RODAPÉ
+   =================================================================== */
+.rodape {
+  margin-top: 32px;
+  padding-block: 56px 32px;
+  background: var(--cor-tinta);
+  color: #C9C6E0;
+}
+
+.rodape__marca {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .35rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.rodape__marca i { color: var(--cor-magenta); }
+
+.rodape__texto,
+.rodape__mini { color: #9D9AB8; font-size: .9rem; }
+
+.rodape__link {
+  color: #C9C6E0;
+  text-decoration: none;
+  margin-inline: .35rem;
+}
+
+.rodape__link:hover { color: #fff; text-decoration: underline; }
+
+.rodape__social a {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-left: .5rem;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 12px;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color .18s ease, border-color .18s ease;
+}
+
+.rodape__social a:hover {
+  background: rgba(255, 255, 255, .12);
+  border-color: var(--cor-magenta);
+}
+
+.rodape__linha {
+  margin-block: 28px;
+  border-color: rgba(255, 255, 255, .14);
+  opacity: 1;
+}
+
+.rodape__mini a { color: var(--cor-amarelo); }
+
+/* ===================================================================
+   6. RESPONSIVIDADE
+   Só o que o Bootstrap não resolve sozinho. As colunas (col-lg-*) já
+   se empilham sozinhas abaixo de 992px.
+   =================================================================== */
+@media (max-width: 575.98px) {
+  .secao { padding-block: 44px; }
+  .hero { border-radius: var(--raio-md); }
+  .marca__nome small { display: none; }   /* economiza espaço no topo */
+}
+
+/* respeita quem pediu menos animação no sistema operacional */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+  .card-projeto:hover { transform: none; }
+}
