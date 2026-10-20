@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adicionar produto à loja</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+</head>
+<body class="bg-body-tertiary">
+  <main class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <header class="mb-4">
+          <p class="text-primary fw-semibold mb-2">LOJA VIRTUAL</p>
+          <h1 class="h2 mb-2">Adicionar novo produto</h1>
+          <p class="text-body-secondary mb-0">
+            Informe os dados para incluir um item no catálogo da loja.
+          </p>
+        </header>
+
+        <section class="card border-0 shadow-sm" aria-labelledby="dados-produto">
+          <div class="card-body p-4 p-md-5">
+            <h2 id="dados-produto" class="visually-hidden">Dados do produto</h2>
+            <form>
+              <div class="mb-3">
+                <label for="nome" class="form-label">Nome do produto</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nome"
+                  name="nome"
+                  maxlength="100"
+                  placeholder="Ex.: Luminária de mesa"
+                  required>
+                <div class="form-text">Máximo de 100 caracteres.</div>
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-12 col-sm-6">
+                  <label for="preco" class="form-label">Preço</label>
+                  <div class="input-group">
+                    <span class="input-group-text">R$</span>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="preco"
+                      name="preco"
+                      min="0.01"
+                      step="0.01"
+                      placeholder="0,00"
+                      required>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <label for="estoque" class="form-label">Quantidade em estoque</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="estoque"
+                    name="estoque"
+                    min="0"
+                    step="1"
+                    placeholder="Ex.: 25"
+                    required>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="categoria" class="form-label">Categoria</label>
+                <select
+                  class="form-select"
+                  id="categoria"
+                  name="categoria"
+                  required>
+                  <option value="" selected disabled>Escolha uma categoria</option>
+                  <option value="casa">Casa</option>
+                  <option value="esporte">Esporte</option>
+                  <option value="livros">Livros</option>
+                  <option value="outros">Outros</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="descricao" class="form-label">Descrição</label>
+                <textarea
+                  class="form-control"
+                  id="descricao"
+                  name="descricao"
+                  rows="4"
+                  maxlength="300"
+                  placeholder="Apresente os detalhes do produto (opcional)"></textarea>
+                <div class="form-text">Até 300 caracteres.</div>
+              </div>
+
+              <div class="form-check mb-4">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="destaque"
+                  name="destaque">
+                <label class="form-check-label" for="destaque">
+                  Mostrar este produto em destaque
+                </label>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row gap-2">
+                <button type="submit" class="btn btn-primary">
+                  Salvar produto
+                </button>
+                <button type="reset" class="btn btn-outline-secondary">
+                  Cancelar
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
