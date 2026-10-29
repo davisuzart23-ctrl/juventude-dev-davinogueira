@@ -1,16 +1,15 @@
-function Portal() {
-  const nome = "Jan"
-  
-  return (
-    <div>
-    <p>{nome}</p>
-    <p>{2 + 2}</p>
-<p>{nome === "Jan" </p>
-    </div>
-      <h1>Meu primeiro app</h1>
+import Botao from './Botao'
+import'./App.css'
 
+
+function App() {
+return (
+    <main>
+ <h1>Meu primeiro app</h1>
+<p>Feito com React e Vite</p>
+    <Botao />
+    </main>
   )
 }
-
 
 export default App
